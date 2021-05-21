@@ -14,8 +14,7 @@ from random import choice  # Biblioteca Random
 
 
 def progress_bar(done):
-    print(colored("\rProgress: [{0:50s}] {1:.1f}%").format('#' * int(done * 50), done * 100), end='')
-
+    print("\rProgress: [{0:50s}] {1:.1f}%".format('#' * int(done * 50), done * 100), end='')
 
 def carregando():
     for n in range(6):
@@ -28,12 +27,12 @@ def carregando():
 # === SCP-019 === Jarro
 
 def scp019():
-    entrando = 'Você vê no centro da sala uma jarra de cerâmica, com uma boca de 1,8 m de diâmetro e 2,4 m de altura.'
-    enfrentar = 'Você se aproxima da jarra'
+    entrando = 'Você vê no centro da sala um jarro de cerâmica, com mais de 2 metros!'
+    enfrentar = 'Você se aproxima do jarro'
     saircorrendo = 'você vai embora'
     azar = 'Infelizmente Você não conseguiu sair, pois a porta se fechou'
     sair = choice([saircorrendo, azar])
-    devorado = 'de dentro da jarra saem criaturas do tamanho de pugs e te devoram vivo.'
+    devorado = 'de dentro do jarro saem criaturas do tamanho de pugs e te devoram vivo'
 
     jarro = {
         1: entrando,
@@ -43,18 +42,17 @@ def scp019():
     }
 
     print('{}'.format(jarro[1]))
-    opcao = str(input('Você quer: \nSe aproxima(1) ou Ir embora(2)\n')).upper()
+    opcao = str(input('Você quer: \nSe aproxima(1) ou Ir embora(2):\n')).upper()
     if opcao == '2' or opcao == 'EMBORA':
         if sair == saircorrendo:
-            print('{}'.format(jarro[3]))
+            print('{}.'.format(jarro[3]))
             return 1
         else:
-            print('{}\n{}'.format(jarro[3], jarro[4]))
+            print('{}.\n{}.'.format(jarro[3], jarro[4]))
             return 0
     else:
-        print('{}{}'.format(jarro[2], jarro[4]))
+        print('{}, {}.'.format(jarro[2], jarro[4]))
         return 0
-
 
 # === SCP-500 === Pilulas
 
@@ -73,11 +71,11 @@ def scp500():
 # === SCP-682 === Jacare
 
 def scp682():
-    entrando = '''A porta da sala se fecha. \nO reptil esta no centro da sala'''
-    enfrentar = '''O reptil que estava no centro da sala vai em sua direção e com a suas garas e mandibula ele te 
-agarra. Antes dele te dilacerar você tem um pensamento como se você sentisse a dor e traumas que ele passou aqui.'''
+    entrando = '''A porta da sala se fecha.\nO reptil esta no centro da sala.'''
+    enfrentar = '''O reptil que estava no centro da sala vai em sua direção e com a suas garras e mandibula ele te 
+agarra, Antes dele te dilacerar você tem um pensamento como se você sentisse a dor e traumas que ele passou aqui.'''
     saircorrendo = 'você sai correndo em direção a porta'
-    azar = 'Infelizmente Você não consegui correr, pois ele foi mais rapido!'
+    azar = 'Infelizmente Você não conseguiu correr, pois ele foi mais rapido!'
     sair = choice([saircorrendo, azar])
 
     jacare = {
@@ -87,10 +85,10 @@ agarra. Antes dele te dilacerar você tem um pensamento como se você sentisse a
     }
 
     print('{}'.format(jacare[1]))
-    opcao = str(input('Você quer: \nEnfrentar(1) ou Sair correndo(2)\n')).upper()
+    opcao = str(input('Você quer: \nEnfrentar(1) ou Sair correndo(2):\n')).upper()
     if opcao == '2' or opcao == 'CORRER':
         if sair == saircorrendo:
-            print('{}'.format(jacare[3]))
+            print('{}.'.format(jacare[3]))
             return 1
         else:
             print('{}\n{}'.format(jacare[3], jacare[2]))
@@ -103,10 +101,11 @@ agarra. Antes dele te dilacerar você tem um pensamento como se você sentisse a
 # == SCP-492 === Jack
 
 def scp492():
-    falas1 = 'Olá meu nome é Jack como você se chama? '
+
+    falas1 = 'Olá meu nome é Jack quem é você? '
     falas2 = 'O-Oi? Estou com medo, você veio para me salvar? Qual é o seu nome? '
-    historia1 = 'Antes daqui eu era um boneco de atraçoes piratas de um parque de diversões '
-    historia2 = 'la no parque de diversões que eu morava, eu nao fui o unico a ganhar vida, por varias vezes os ' \
+    historia1 = 'Antes daqui eu era um boneco de atrações piratas de um parque de diversões '
+    historia2 = 'la no parque de diversões que eu morava, eu não fui o unico a ganhar vida, por varias vezes os ' \
                 'dinossauros de brinquedo tentaram me devorar '
     Agradecimento = 'Obrigado, de agora em diante serei seu amigo.'
     Comeco = 'Posso te contar um segredo?'
@@ -133,11 +132,13 @@ def scp492():
             hist = input('{}'.format(opjack[6]))
             if hist == 'S' or hist == 'SIM':
                 print('{}'.format(historia))
+            else:
+                print('para nao te atrapalhar eu vou ficar quietinho.')
         else:
             print('{}'.format(opjack[9]))
             print('{}'.format(opjack[7]))
     else:
-        print('é mentira, eu posso ser apenas um boneco mas ainda fico chateado quando mentem para mim.')
+        print('é mentira eu sei o seu nome de verdade, eu posso ser apenas um boneco mas ainda fico chateado quando mentem para mim.')
         print('*{}*'.format(opjack[7]))
     return 1
 
@@ -145,12 +146,12 @@ def scp492():
 # === SCP-939 ==== Cachorro
 
 def scp939():
-    entrando = 'Entrando na sala, Você escuta cada vez mais pedidos de socorro, ao se aproximar cada vez mais da vozes.'
+    entrando = 'Entrando na sala, Você escuta cada vez mais pedidos de socorro.'
     enfrentar = '''Você vê seres estranhos maiores que você e suas cabeças são alongadas, desprovidas de olhos, 
-    cada um dos seus quatro membros termina em garras. suas mandíbulas são revestidas de dentes vermelhos. e ultimas 
-    coisas que você escuta são eles imitando os gritos de socorro. '''
-    saircorrendo = 'você vai embora'
-    azar = 'Infelizmente Você não conseguiu sair, pois a porta se fechou'
+cada um dos seus quatro membros termina em garras. suas mandíbulas são revestidas de dentes vermelhos.
+As ultimas coisas que você escuta antes de ser devorado. são eles imitando os gritos de socorro das suas antigas vitimas.'''
+    saircorrendo = 'você encontra a porta no meio da escuridão, e vai embora.'
+    azar = 'Infelizmente Você não conseguiu sair, pois estava muito escuro.'
     sair = choice([saircorrendo, azar])
 
     cachorro = {
@@ -160,8 +161,9 @@ def scp939():
     }
 
     print('{}'.format(cachorro[1]))
-    opcao = str(input('Você quer: \nSe aproxima(1) \nIr embora(2)')).upper()
-    if opcao == '2' or opcao == 'EMBORA':
+    print('A sala e muito grande e escura, você não enxerga quase nada a sua frente, porem escuta gritos ecoando pela sala.')
+    opcao = str(input('Você quer: \nProcurar os pedidos de socorro(1) \nTentar achar a proxima porta na escuridão(2):\n')).upper()
+    if opcao == '2' or opcao == 'PORTA':
         if sair == saircorrendo:
             print('{}'.format(cachorro[3]))
             return 1
