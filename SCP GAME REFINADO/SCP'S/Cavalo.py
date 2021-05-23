@@ -1,4 +1,8 @@
+from random import choice
+
 def scp042():
+    fim = 0
+    recomeco = 0
     Apresentacao1 = 'Olá, veio fazer experiencia comigo denovo? eu ja não aguento mais!!'
     Apresentacao2 = 'Quem veio me perturbar novamente?'
     Dicas1 = 'existem documentos de todos nós, para voce nao morrer eu indico a voce ler eles.'
@@ -16,24 +20,31 @@ def scp042():
         4: CavaloChateado,
         5: Adeus
     }
-
-    encostar = input('Você vê um Cavalo branco deitado no centro da sala, você quer interagir com ele?'
-                     '\nSim(S) ou Não(N):\n').upper()
-    if encostar == 'S' or encostar == 'SIM':
-        print('{}'.format(cavalo[1]))
-        nomec = input('Qual é o seu nome?\n')
-        if nomec == pessoa.nome:
-            Seg = input('{}\n'.format(cavalo[3])).upper()
-            if Seg == 'S' or Seg == 'SIM':
-                print('{}\n'.format(cavalo[2]))
+    while fim != 1:
+        encostar = input('Você vê um Cavalo branco deitado no centro da sala, você quer interagir com ele? Sim(S) ou Não(N):\n').upper()
+        if encostar in ('S', 'SIM'):
+            print('{}'.format(cavalo[1]))
+            nomec = input('Qual é o seu nome? ')
+            if nomec == pessoa.nome:
+                while recomeco != 1:
+                    Seg = input('{}\n'.format(cavalo[3])).upper()
+                    if Seg in ('S','SIM'):
+                        print('{}\n'.format(cavalo[2]))
+                        return 1
+                    elif Seg in ('N','NAO','NÃO'):
+                        print('{}\n'.format(cavalo[4]))
+                        return 1
+                    else:
+                        print('Opção invalida, Tente novamente.')
             else:
-                print('{}\n'.format(cavalo[4]))
-        else:
-            print('não venha mentir para mim eu sou um cavalo telepata! seu nome é {}.'.format(pessoa.nome))
+                print('não venha mentir para mim eu sou um cavalo telepata! seu nome é {}.'.format(pessoa.nome))
+                print('{}\n'.format(cavalo[5]))
+        elif encostar in ('N','Não'):
             print('{}\n'.format(cavalo[5]))
-    else:
-        print('{}\n'.format(cavalo[5]))
+            return 1
+        else:
+            print('Opção invalida, Tente novamente.')
 
-    return 1
+scp042()
 
 # PréAlpha 2.5 BolsonaroEdition

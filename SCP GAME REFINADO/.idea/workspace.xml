@@ -2,12 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d5f64944-dcdc-447b-b7c8-ae2258535b96" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SCP'S/Cachorro.py" beforeDir="false" afterPath="$PROJECT_DIR$/SCP'S/Cachorro.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SCP'S/Cavalo.py" beforeDir="false" afterPath="$PROJECT_DIR$/SCP'S/Cavalo.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SCP'S/Jacare.py" beforeDir="false" afterPath="$PROJECT_DIR$/SCP'S/Jacare.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SCP'S/Jack.py" beforeDir="false" afterPath="$PROJECT_DIR$/SCP'S/Jack.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SCP'S/Jarro.py" beforeDir="false" afterPath="$PROJECT_DIR$/SCP'S/Jarro.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SCP'S/Pilula.py" beforeDir="false" afterPath="$PROJECT_DIR$/SCP'S/Pilula.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/maincode.py" beforeDir="false" afterPath="$PROJECT_DIR$/maincode.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -54,7 +55,7 @@
       <recent name="C:\Users\pedro\Desktop\SCP GAME\SCP'S" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.Cachorro">
+  <component name="RunManager" selected="Python.Cavalo">
     <configuration name="Cachorro" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -68,6 +69,27 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/SCP'S/Cachorro.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Cavalo" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\SCP GAME REFINADO\Scripts\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/SCP'S" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/SCP'S/Cavalo.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -140,39 +162,18 @@
       <method v="2" />
     </configuration>
     <configuration name="maincode" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="scpGame" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="" />
+      <option name="SDK_HOME" value="C:\SCP GAME REFINADO\Scripts\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/maincode.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="scp_085" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="scpGame" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/scp_085.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -183,11 +184,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.Cachorro" />
-        <item itemvalue="Python.Jacare" />
+        <item itemvalue="Python.Cavalo" />
         <item itemvalue="Python.Jarro" />
+        <item itemvalue="Python.Jacare" />
         <item itemvalue="Python.maincode" />
-        <item itemvalue="Python.scp_085" />
+        <item itemvalue="Python.Cachorro" />
       </list>
     </recent_temporary>
   </component>
@@ -212,5 +213,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

@@ -27,6 +27,7 @@ def carregando():
 # === SCP-019 === Jarro
 
 def scp019():
+    fim = 0
     entrando = 'Você vê no centro da sala um jarro de cerâmica, com mais de 2 metros!'
     enfrentar = 'Você se aproxima do jarro'
     saircorrendo = 'você vai embora'
@@ -40,37 +41,44 @@ def scp019():
         3: sair,
         4: devorado
     }
-
     print('{}'.format(jarro[1]))
-    opcao = str(input('Você quer: \nSe aproxima(1) ou Ir embora(2):\n')).upper()
-    if opcao == '2' or opcao == 'EMBORA':
-        if sair == saircorrendo:
-            print('{}.'.format(jarro[3]))
-            return 1
-        else:
-            print('{}.\n{}.'.format(jarro[3], jarro[4]))
+    while fim != 1:
+        opcao = str(input('Você quer, (1)Se aproxima ou (2)Ir embora.\nOpção: ')).upper()
+        if opcao in ('2', 'EMBORA', 'IR EMBORA', 'SAIR'):
+            if sair == saircorrendo:
+                print('{}.'.format(jarro[3]))
+                return 1
+            else:
+                print('{}.\n{}.'.format(jarro[3], jarro[4]))
+                return 0
+        elif opcao in ('1', 'APROXIMAR'):
+            print('{}, {}.'.format(jarro[2], jarro[4]))
             return 0
-    else:
-        print('{}, {}.'.format(jarro[2], jarro[4]))
-        return 0
+        else:
+            print('Opção invalida, Tente novamente.')
 
 # === SCP-500 === Pilulas
 
 def scp500():
-    SCP500 = input(
-        'Você vê um pequeno pote de plástico com pílulas vermelhas, Você quer tomar? \nSim(S) Não(N)\n').upper()
-    if SCP500 == 'S' or SCP500 == 'SIM':
-        print('Você toma as pilulas e se sente regenerado.\n')
-        print('Você ganhou 1 vida.')
-        return 2
-    else:
-        print('Você não toma as pilulas e vai embora.\n')
-        return 1
+    fim = 0
+    while fim != 1:
+        print('Você vê um pequeno pote de plástico com pílulas vermelhas, Você quer tomar?\nSim(S) Não(N)')
+        SCP500 = input('Escolha: ').upper()
+        if SCP500 in ('S', 'SIM'):
+            print('Você toma as pilulas e se sente regenerado.\n')
+            print('Você ganhou 1 vida.')
+            return 2
+        elif SCP500 in ('N', 'NÃO', 'NAO'):
+            print('Você não toma as pilulas e vai embora.\n')
+            return 1
+        else:
+            print('\nOpção invalida, Tente novamente.\n')
 
 
 # === SCP-682 === Jacare
 
 def scp682():
+    fim = 0
     entrando = '''A porta da sala se fecha.\nO reptil esta no centro da sala.'''
     enfrentar = '''O reptil que estava no centro da sala vai em sua direção e com a suas garras e mandibula ele te 
 agarra, Antes dele te dilacerar você tem um pensamento como se você sentisse a dor e traumas que ele passou aqui.'''
@@ -83,19 +91,21 @@ agarra, Antes dele te dilacerar você tem um pensamento como se você sentisse a
         2: enfrentar,
         3: sair,
     }
-
     print('{}'.format(jacare[1]))
-    opcao = str(input('Você quer: \nEnfrentar(1) ou Sair correndo(2):\n')).upper()
-    if opcao == '2' or opcao == 'CORRER':
-        if sair == saircorrendo:
-            print('{}.'.format(jacare[3]))
-            return 1
-        else:
-            print('{}\n{}'.format(jacare[3], jacare[2]))
+    while fim != 1:
+        opcao = str(input('Você quer, (1)Enfrentar ou (2)Sair correndo.\nOpção: ')).upper()
+        if opcao in ('2', 'CORRER'):
+            if sair == saircorrendo:
+                print('{}.'.format(jacare[3]))
+                return 1
+            else:
+                print('{}\n{}'.format(jacare[3], jacare[2]))
+                return 0
+        elif opcao in ('1', 'ENFRENTAR'):
+            print('{}'.format(jacare[2]))
             return 0
-    else:
-        print('{}'.format(jacare[2]))
-        return 0
+        else:
+            print('Opção Invalida, Tente novamente.')
 
 
 # == SCP-492 === Jack
@@ -146,6 +156,7 @@ def scp492():
 # === SCP-939 ==== Cachorro
 
 def scp939():
+    fim = 0
     entrando = 'Entrando na sala, Você escuta cada vez mais pedidos de socorro.'
     enfrentar = '''Você vê seres estranhos maiores que você e suas cabeças são alongadas, desprovidas de olhos, 
 cada um dos seus quatro membros termina em garras. suas mandíbulas são revestidas de dentes vermelhos.
@@ -161,23 +172,30 @@ As ultimas coisas que você escuta antes de ser devorado. são eles imitando os 
     }
 
     print('{}'.format(cachorro[1]))
-    print('A sala e muito grande e escura, você não enxerga quase nada a sua frente, porem escuta gritos ecoando pela sala.')
-    opcao = str(input('Você quer: \nProcurar os pedidos de socorro(1) \nTentar achar a proxima porta na escuridão(2):\n')).upper()
-    if opcao == '2' or opcao == 'PORTA':
-        if sair == saircorrendo:
-            print('{}'.format(cachorro[3]))
-            return 1
-        else:
-            print('{}\n{}'.format(cachorro[3], cachorro[2]))
+    print('A sala é muito grande e escura, você não enxerga quase nada a sua frente, porem escuta gritos ecoando pela sala.')
+
+    while fim != 1:
+        print('Você quer: \n(1)Procurar os pedidos de socorro.\n(2)Tentar achar a proxima porta na escuridão.')
+        opcao = input('Escolha: ').upper()
+        if opcao in ('2','PORTA'):
+            if sair == saircorrendo:
+                print('{}'.format(cachorro[3]))
+                return 1
+            else:
+                print('{}\n{}'.format(cachorro[3], cachorro[2]))
+                return 0
+        elif opcao in ('1','PROCURAR',):
+            print('{}'.format(cachorro[2]))
             return 0
-    else:
-        print('{}'.format(cachorro[2]))
-        return 0
+        else:
+            print('Opção invalida, tente novamente.')
 
 
 # === SCP-042 === Cavalo
 
 def scp042():
+    fim = 0
+    recomeco = 0
     Apresentacao1 = 'Olá, veio fazer experiencia comigo denovo? eu ja não aguento mais!!'
     Apresentacao2 = 'Quem veio me perturbar novamente?'
     Dicas1 = 'existem documentos de todos nós, para voce nao morrer eu indico a voce ler eles.'
@@ -195,25 +213,30 @@ def scp042():
         4: CavaloChateado,
         5: Adeus
     }
-
-    encostar = input('Você vê um Cavalo branco deitado no centro da sala, você quer interagir com ele?'
-                     '\nSim(S) ou Não(N):\n').upper()
-    if encostar == 'S' or encostar == 'SIM':
-        print('{}'.format(cavalo[1]))
-        nomec = input('Qual é o seu nome?\n')
-        if nomec == pessoa.nome:
-            Seg = input('{}\n'.format(cavalo[3])).upper()
-            if Seg == 'S' or Seg == 'SIM':
-                print('{}\n'.format(cavalo[2]))
+    while fim != 1:
+        encostar = input('Você vê um Cavalo branco deitado no centro da sala, você quer interagir com ele? Sim(S) ou Não(N):\n').upper()
+        if encostar in ('S', 'SIM'):
+            print('{}'.format(cavalo[1]))
+            nomec = input('Qual é o seu nome? ')
+            if nomec == pessoa.nome:
+                while recomeco != 1:
+                    Seg = input('{}\n'.format(cavalo[3])).upper()
+                    if Seg in ('S','SIM'):
+                        print('{}\n'.format(cavalo[2]))
+                        return 1
+                    elif Seg in ('N','NAO','NÃO'):
+                        print('{}\n'.format(cavalo[4]))
+                        return 1
+                    else:
+                        print('Opção invalida, Tente novamente.')
             else:
-                print('{}\n'.format(cavalo[4]))
-        else:
-            print('não venha mentir para mim eu sou um cavalo telepata! seu nome é {}.'.format(pessoa.nome))
+                print('não venha mentir para mim eu sou um cavalo telepata! seu nome é {}.'.format(pessoa.nome))
+                print('{}\n'.format(cavalo[5]))
+        elif encostar in ('N','Não'):
             print('{}\n'.format(cavalo[5]))
-    else:
-        print('{}\n'.format(cavalo[5]))
-
-    return 1
+            return 1
+        else:
+            print('Opção invalida, Tente novamente.')
 
 
 # === SCP-042 === Fernand
