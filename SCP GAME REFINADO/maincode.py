@@ -1,7 +1,6 @@
 # anotaçoes: acrescentar mais na jogabilidade e historia, mais scps, e um metodo que depois de uma quantidade de loops
 # o game acaba
 
-from termcolor import colored  # Biblioteca para cores na letra exemplo print(termcolor.colored('msg','cor'))
 from time import sleep
 from random import choice  # Biblioteca Random
 
@@ -316,10 +315,10 @@ def scp085():
 # ============================================ DICIONARIO DE OPÇÕES ================================================== #
 
 escolha1 = "Você vê uma grande jarra de cerâmica no centro da sala."
-escolha2 = 'Você vê um pequeno pote de plástico em cima de uma mesa.'
+escolha2 = 'Você vê um pequeno pote em cima de uma mesa.'
 escolha3 = 'Você vê uma grande criatura vagamente semelhante a um réptil.'
 escolha4 = 'Você vê um pequeno boneco pirata de pano sentado no canto da sala.'
-escolha5 = 'Você vê uma sala escura, nao consegue enchergar o que esta dentro, porem escuta pedidos de socorro!'
+escolha5 = 'Você encontra uma sala escura, nao consegue enchergar o que esta dentro, porem escuta pedidos de socorro!'
 escolha6 = 'Você vê um cavalo branco deitado no centro da sala.'
 escolha7 = 'Você vê um grande quarto decorado no estilo palacio da realeza françesa.'
 
@@ -361,7 +360,7 @@ class Personagem:
     def __init__(self):
         self.nome = []
         self.vida = 3
-        self.pontos = 0
+        self.pontos = 5
 
 
 # ================================================ Codigo Salas ====================================================== #
@@ -388,6 +387,7 @@ def proceduresala(vida, op):  # Função para calcular a vida
         sleep(3)
 
     # ============================================== Codigo Game ==================================================== #
+   
     print('\nAgora Você tem no total [{}]Pontos'.format(ponto.pontos))
     print('\nVocê está em um corredor e existem duas portas, uma na direita e outra na esquerda.')  # Narração Basica
     sleep(2)
@@ -412,6 +412,7 @@ def proceduresala(vida, op):  # Função para calcular a vida
                 print("\nVocê morreu, Escolha melhor da próxima vez.\n")
                 sleep(3)
                 vida -= 1
+                ponto.pontos -= 1
             elif x == 1 or x == 2:
                 if x == 2:
                     vida += 1
@@ -426,6 +427,7 @@ def proceduresala(vida, op):  # Função para calcular a vida
                 print("\nVocê morreu, Escolha melhor da próxima vez.\n")
                 sleep(3)
                 vida -= 1
+                ponto.pontos -= 1
             elif x == 1 or x == 2:
                 if x == 2:
                     vida += 1
@@ -444,6 +446,7 @@ def proceduresala(vida, op):  # Função para calcular a vida
             if x == 0:
                 print("\nVocê morreu. Escolha melhor da próxima vez.\n")
                 vida -= 1
+                ponto.pontos -= 1
             elif x == 1 or x == 2:
                 if x == 2:
                     vida += 1
@@ -457,6 +460,7 @@ def proceduresala(vida, op):  # Função para calcular a vida
             if x == 0:
                 print("\nVocê morreu. Escolha melhor da próxima vez.\n")
                 vida -= 1
+                ponto.pontos -= 1
             elif x == 1 or x == 2:
                 if x == 2:
                     vida += 1
@@ -479,15 +483,15 @@ left = choice(options)
 right = choice(options)
 ponto = Personagem()
 
-print(colored('\n=== Hola Bem Vindo ao mundo de SCP ===\n', 'yellow'))
-print(colored('''Isso é uma simulação para preparar os novatos da fundação em caso de emergencia!
+print('\n=== Hola Bem Vindo ao mundo de SCP ===\n')
+print('''Isso é uma simulação para preparar os novatos da fundação em caso de emergencia!
 Regras:
 1º Tudo que acontecer neste simulado não podera ser divulgado a nimguem!
-2º As opções estarão em''', 'green'), colored('Vermelho! ou dentro de ().', 'red'))
-print(colored('3º Tudo que for para inserir uma resposta estara em', 'green'), colored('Azul.', 'blue'))
+2º As opções estarão em''', 'Verde'),('Vermelho! ou dentro de ().')
+print('3º Tudo que for para inserir uma resposta estara em Azul.')
 sleep(2)
 pessoa = Personagem()
-pessoa.nome = input(colored("Digite seu nome para começarmos:\n", "blue"))
+pessoa.nome = input("Digite seu nome para começarmos:\n")
 carregando()
 print('\nPrazer em te conhecer Sr(a) {}.\n'.format(pessoa.nome))
 print("Sempre que você passar por uma sala, seja vivo ou morto, você voltará nesse ponto.\nNão se esqueça: "
