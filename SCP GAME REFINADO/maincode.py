@@ -80,7 +80,7 @@ def scp682():
     fim = 0
     entrando = '''A porta da sala se fecha.\nO reptil esta no centro da sala.'''
     enfrentar = '''O reptil que estava no centro da sala vai em sua direção e com a suas garras e mandibula ele te 
-agarra, Antes dele te dilacerar você tem um pensamento como se você sentisse a dor e traumas que ele passou aqui.'''
+    agarra, Antes dele te dilacerar você tem um pensamento como se você sentisse a dor e traumas que ele passou aqui.'''
     saircorrendo = 'você sai correndo em direção a porta'
     azar = 'Infelizmente Você não conseguiu correr, pois ele foi mais rapido!'
     sair = choice([saircorrendo, azar])
@@ -158,8 +158,8 @@ def scp939():
     fim = 0
     entrando = 'Entrando na sala, Você escuta cada vez mais pedidos de socorro.'
     enfrentar = '''Você vê seres estranhos maiores que você e suas cabeças são alongadas, desprovidas de olhos, 
-cada um dos seus quatro membros termina em garras. suas mandíbulas são revestidas de dentes vermelhos.
-As ultimas coisas que você escuta antes de ser devorado. são eles imitando os gritos de socorro das suas antigas vitimas.'''
+    cada um dos seus quatro membros termina em garras. suas mandíbulas são revestidas de dentes vermelhos.
+    As ultimas coisas que você escuta antes de ser devorado. são eles imitando os gritos de socorro das suas antigas vitimas.'''
     saircorrendo = 'você encontra a porta no meio da escuridão, e vai embora.'
     azar = 'Infelizmente Você não conseguiu sair, pois estava muito escuro.'
     sair = choice([saircorrendo, azar])
@@ -484,16 +484,22 @@ right = choice(options)
 ponto = Personagem()
 
 print('\n=== Hola Bem Vindo ao mundo de SCP ===\n')
-print('''Isso é uma simulação para preparar os novatos da fundação em caso de emergencia!
+
+print('''
+Isso é uma simulação para preparar os novatos da fundação em caso de emergencia!
 Regras:
-1º Tudo que acontecer neste simulado não podera ser divulgado a nimguem!
-2º As opções estarão em''', 'Verde'),('Vermelho! ou dentro de ().')
-print('3º Tudo que for para inserir uma resposta estara em Azul.')
+1º Tudo que acontecer neste simulado não podera ser divulgado a ninguem!
+''')
+
 sleep(2)
+
 pessoa = Personagem()
 pessoa.nome = input("Digite seu nome para começarmos:\n")
+
 carregando()
+
 print('\nPrazer em te conhecer Sr(a) {}.\n'.format(pessoa.nome))
+
 print("Sempre que você passar por uma sala, seja vivo ou morto, você voltará nesse ponto.\nNão se esqueça: "
       "você tem APENAS 3 vidas!")
 sleep(5)
